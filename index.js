@@ -51,3 +51,28 @@ for (let propiedad in productoModifica) {
 }
 
 //TP3-Ejercicio 6. Comprobación de Propiedades:
+function tienePropiedad(objeto, nombrePropiedad) {
+    return nombrePropiedad in objeto
+}
+const pelicula={
+    nombre: 'Deadpool',
+}
+console.log(tienePropiedad(pelicula, 'nombre'));
+console.log(tienePropiedad(pelicula, 'fecha'));
+
+//TP3-Ejercicio 7. Eliminación de Propiedades:
+const productoElimina = {
+    nombre: 'Milanguche',
+    precio: 5000,
+    disponible: false,
+}
+
+for (let propiedad in productoElimina) {
+    console.log(propiedad + ': ' + productoElimina[propiedad]);
+}
+
+delete productoElimina.disponible;
+
+for (let propiedad in productoElimina) {
+    console.log(propiedad + ': ' + productoElimina[propiedad]);
+}
