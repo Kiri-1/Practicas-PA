@@ -33,7 +33,7 @@ console.log(libroDescripcion.descripcion());
 const producto = {
     nombre: 'Milanguche',
     precio: 5000,
-    disponible: false,
+    disponible: false
 }
 for (let propiedad in producto) {
     console.log(propiedad + ': ' + producto[propiedad]);
@@ -43,7 +43,7 @@ for (let propiedad in producto) {
 const productoModifica = {
     nombre: 'Milanguche',
     precio: 5000,
-    disponible: false,
+    disponible: false
 }
 productoModifica.precio = 2000;
 for (let propiedad in productoModifica) {
@@ -54,7 +54,7 @@ for (let propiedad in productoModifica) {
 function tienePropiedad(objeto, nombrePropiedad) {
     return nombrePropiedad in objeto
 }
-const pelicula={
+const pelicula = {
     nombre: 'Deadpool',
 }
 console.log(tienePropiedad(pelicula, 'nombre'));
@@ -64,7 +64,7 @@ console.log(tienePropiedad(pelicula, 'fecha'));
 const productoElimina = {
     nombre: 'Milanguche',
     precio: 5000,
-    disponible: false,
+    disponible: false
 }
 
 for (let propiedad in productoElimina) {
@@ -76,3 +76,33 @@ delete productoElimina.disponible;
 for (let propiedad in productoElimina) {
     console.log(propiedad + ': ' + productoElimina[propiedad]);
 }
+
+//TP3-Ejercicio 8. Combinar Objetos:
+const persona1 = {
+    nombre: 'Matias',
+    edad: 12
+}
+const perosna2 = {
+    fecha: 1997,
+    disponible: false
+}
+const personaCombinada = Object.assign(persona1, perosna2);
+
+console.log(personaCombinada);
+
+//TP3-Ejercicio 9. Copiar Objetos:
+const estudianteCopiar = {
+    nombre: 'Belen',
+    edad: 15,
+    direccion: {
+        calle: 'calle falsa 123, ',
+        ciudad: 'Springfield, ',
+        pais: 'Canada'
+    }
+}
+const copiando = JSON.parse(estudianteCopiar);
+
+console.log(copiando.nombre);
+
+console.log(copiando.direccion.calle);
+
